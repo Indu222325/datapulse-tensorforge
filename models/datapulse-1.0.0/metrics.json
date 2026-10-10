@@ -1,0 +1,579 @@
+{
+ "protocol": "Fitted on train.jsonl only (4,000 tickets + 30 hand-written spam examples), scored on validation.jsonl (800 tickets with unseen phrasing).",
+ "category": {
+  "accuracy": 0.88,
+  "macro_f1": 0.8757,
+  "weighted_f1": 0.8786,
+  "per_class": [
+   {
+    "category": "payment_refund",
+    "precision": 0.914,
+    "recall": 0.965,
+    "f1": 0.939,
+    "support": 144
+   },
+   {
+    "category": "ride_trip_issue",
+    "precision": 0.871,
+    "recall": 0.902,
+    "f1": 0.886,
+    "support": 112
+   },
+   {
+    "category": "lost_item",
+    "precision": 1.0,
+    "recall": 0.675,
+    "f1": 0.806,
+    "support": 40
+   },
+   {
+    "category": "order_missing_wrong",
+    "precision": 0.787,
+    "recall": 0.771,
+    "f1": 0.779,
+    "support": 96
+   },
+   {
+    "category": "delivery_delay",
+    "precision": 0.825,
+    "recall": 0.942,
+    "f1": 0.879,
+    "support": 120
+   },
+   {
+    "category": "food_quality",
+    "precision": 0.918,
+    "recall": 1.0,
+    "f1": 0.957,
+    "support": 56
+   },
+   {
+    "category": "account_promo",
+    "precision": 1.0,
+    "recall": 0.889,
+    "f1": 0.941,
+    "support": 72
+   },
+   {
+    "category": "safety_conduct",
+    "precision": 0.844,
+    "recall": 0.844,
+    "f1": 0.844,
+    "support": 32
+   },
+   {
+    "category": "app_technical",
+    "precision": 0.957,
+    "recall": 0.703,
+    "f1": 0.811,
+    "support": 64
+   },
+   {
+    "category": "general_inquiry",
+    "precision": 0.739,
+    "recall": 0.85,
+    "f1": 0.791,
+    "support": 40
+   },
+   {
+    "category": "spam_irrelevant",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 24
+   }
+  ],
+  "confusion_matrix": {
+   "labels": [
+    "payment_refund",
+    "ride_trip_issue",
+    "lost_item",
+    "order_missing_wrong",
+    "delivery_delay",
+    "food_quality",
+    "account_promo",
+    "safety_conduct",
+    "app_technical",
+    "general_inquiry",
+    "spam_irrelevant"
+   ],
+   "rows": [
+    [
+     139,
+     0,
+     0,
+     0,
+     1,
+     2,
+     0,
+     0,
+     0,
+     2,
+     0
+    ],
+    [
+     4,
+     101,
+     0,
+     0,
+     0,
+     0,
+     0,
+     5,
+     0,
+     2,
+     0
+    ],
+    [
+     0,
+     10,
+     27,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    [
+     4,
+     0,
+     0,
+     74,
+     13,
+     2,
+     0,
+     0,
+     0,
+     3,
+     0
+    ],
+    [
+     2,
+     0,
+     0,
+     3,
+     113,
+     1,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     56,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     1,
+     0,
+     0,
+     2,
+     0,
+     64,
+     0,
+     1,
+     4,
+     0
+    ],
+    [
+     0,
+     4,
+     0,
+     0,
+     1,
+     0,
+     0,
+     27,
+     0,
+     0,
+     0
+    ],
+    [
+     2,
+     0,
+     0,
+     15,
+     2,
+     0,
+     0,
+     0,
+     45,
+     0,
+     0
+    ],
+    [
+     1,
+     0,
+     0,
+     1,
+     4,
+     0,
+     0,
+     0,
+     0,
+     34,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     24
+    ]
+   ]
+  },
+  "by_language": {
+   "en": {
+    "n": 280,
+    "accuracy": 0.8786
+   },
+   "mixed": {
+    "n": 20,
+    "accuracy": 0.8
+   },
+   "si": {
+    "n": 160,
+    "accuracy": 0.85
+   },
+   "singlish": {
+    "n": 200,
+    "accuracy": 0.98
+   },
+   "ta": {
+    "n": 120,
+    "accuracy": 0.8167
+   },
+   "tanglish": {
+    "n": 20,
+    "accuracy": 0.6
+   }
+  },
+  "by_channel": {
+   "call_transcript": {
+    "n": 200,
+    "accuracy": 0.93
+   },
+   "chat": {
+    "n": 360,
+    "accuracy": 0.8694
+   },
+   "email": {
+    "n": 240,
+    "accuracy": 0.8542
+   }
+  },
+  "noisy_validation_accuracy": 0.775
+ },
+ "urgency": {
+  "threshold": 0.0,
+  "precision": 0.9359,
+  "recall": 0.9125,
+  "f1": 0.9241,
+  "positives": 80
+ },
+ "secondary": {
+  "margin": -0.5,
+  "exact_match_accuracy": 0.9812,
+  "precision": 0.9306,
+  "recall": 0.8375,
+  "f1": 0.8816,
+  "n_true_secondary": 80,
+  "n_predicted_secondary": 72
+ },
+ "calibration": {
+  "temperature": 0.1714,
+  "ece_before": 0.5938,
+  "ece_after": 0.034,
+  "reliability": [
+   {
+    "bin": "0.1-0.2",
+    "n": 2,
+    "confidence": 0.195,
+    "accuracy": 0.5
+   },
+   {
+    "bin": "0.2-0.3",
+    "n": 22,
+    "confidence": 0.256,
+    "accuracy": 0.318
+   },
+   {
+    "bin": "0.3-0.4",
+    "n": 20,
+    "confidence": 0.361,
+    "accuracy": 0.25
+   },
+   {
+    "bin": "0.4-0.5",
+    "n": 29,
+    "confidence": 0.45,
+    "accuracy": 0.31
+   },
+   {
+    "bin": "0.5-0.6",
+    "n": 33,
+    "confidence": 0.546,
+    "accuracy": 0.545
+   },
+   {
+    "bin": "0.6-0.7",
+    "n": 33,
+    "confidence": 0.66,
+    "accuracy": 0.576
+   },
+   {
+    "bin": "0.7-0.8",
+    "n": 49,
+    "confidence": 0.75,
+    "accuracy": 0.918
+   },
+   {
+    "bin": "0.8-0.9",
+    "n": 69,
+    "confidence": 0.855,
+    "accuracy": 0.913
+   },
+   {
+    "bin": "0.9-1.0",
+    "n": 543,
+    "confidence": 0.982,
+    "accuracy": 0.989
+   }
+  ]
+ },
+ "human_review": {
+  "threshold": 0.6,
+  "table": [
+   {
+    "threshold": 0.3,
+    "auto_routed_share": 0.97,
+    "auto_routed_accuracy": 0.897,
+    "flagged_accuracy": 0.333
+   },
+   {
+    "threshold": 0.35,
+    "auto_routed_share": 0.963,
+    "auto_routed_accuracy": 0.903,
+    "flagged_accuracy": 0.3
+   },
+   {
+    "threshold": 0.4,
+    "auto_routed_share": 0.945,
+    "auto_routed_accuracy": 0.914,
+    "flagged_accuracy": 0.295
+   },
+   {
+    "threshold": 0.45,
+    "auto_routed_share": 0.927,
+    "auto_routed_accuracy": 0.926,
+    "flagged_accuracy": 0.293
+   },
+   {
+    "threshold": 0.5,
+    "auto_routed_share": 0.909,
+    "auto_routed_accuracy": 0.938,
+    "flagged_accuracy": 0.301
+   },
+   {
+    "threshold": 0.55,
+    "auto_routed_share": 0.887,
+    "auto_routed_accuracy": 0.945,
+    "flagged_accuracy": 0.367
+   },
+   {
+    "threshold": 0.6,
+    "auto_routed_share": 0.868,
+    "auto_routed_accuracy": 0.957,
+    "flagged_accuracy": 0.377
+   },
+   {
+    "threshold": 0.65,
+    "auto_routed_share": 0.854,
+    "auto_routed_accuracy": 0.963,
+    "flagged_accuracy": 0.393
+   },
+   {
+    "threshold": 0.7,
+    "auto_routed_share": 0.826,
+    "auto_routed_accuracy": 0.976,
+    "flagged_accuracy": 0.424
+   },
+   {
+    "threshold": 0.75,
+    "auto_routed_share": 0.795,
+    "auto_routed_accuracy": 0.978,
+    "flagged_accuracy": 0.5
+   },
+   {
+    "threshold": 0.8,
+    "auto_routed_share": 0.765,
+    "auto_routed_accuracy": 0.98,
+    "flagged_accuracy": 0.553
+   },
+   {
+    "threshold": 0.85,
+    "auto_routed_share": 0.728,
+    "auto_routed_accuracy": 0.985,
+    "flagged_accuracy": 0.601
+   },
+   {
+    "threshold": 0.9,
+    "auto_routed_share": 0.679,
+    "auto_routed_accuracy": 0.989,
+    "flagged_accuracy": 0.65
+   }
+  ]
+ },
+ "experiments": [
+  {
+   "id": "E1",
+   "name": "Baseline: word TF-IDF + Logistic Regression",
+   "val_accuracy": 0.6038,
+   "val_macro_f1": 0.6338,
+   "val_by_language": {
+    "en": 0.4786,
+    "mixed": 0.5,
+    "si": 0.525,
+    "singlish": 0.855,
+    "ta": 0.5583,
+    "tanglish": 0.85
+   },
+   "n_features": 1725,
+   "train_cv_accuracy": 0.977
+  },
+  {
+   "id": "E2",
+   "name": "Word TF-IDF + linear SVM",
+   "val_accuracy": 0.64,
+   "val_macro_f1": 0.6646,
+   "val_by_language": {
+    "en": 0.4571,
+    "mixed": 0.55,
+    "si": 0.5875,
+    "singlish": 0.945,
+    "ta": 0.6,
+    "tanglish": 0.9
+   },
+   "n_features": 1725,
+   "train_cv_accuracy": 0.9808
+  },
+  {
+   "id": "E3",
+   "name": "+ character n-grams (typo / spelling robust)",
+   "val_accuracy": 0.66,
+   "val_macro_f1": 0.6862,
+   "val_by_language": {
+    "en": 0.5464,
+    "mixed": 0.6,
+    "si": 0.4688,
+    "singlish": 0.95,
+    "ta": 0.6667,
+    "tanglish": 0.9
+   },
+   "n_features": 25295,
+   "train_cv_accuracy": 0.9872
+  },
+  {
+   "id": "E4",
+   "name": "+ romanised character n-grams (one script for Sinhala and Singlish)",
+   "val_accuracy": 0.68,
+   "val_macro_f1": 0.7032,
+   "val_by_language": {
+    "en": 0.5571,
+    "mixed": 0.6,
+    "si": 0.5687,
+    "singlish": 0.945,
+    "ta": 0.65,
+    "tanglish": 0.9
+   },
+   "n_features": 43680,
+   "train_cv_accuracy": 0.989
+  },
+  {
+   "id": "E5",
+   "name": "+ domain concept lexicon",
+   "val_accuracy": 0.855,
+   "val_macro_f1": 0.8526,
+   "val_by_language": {
+    "en": 0.8143,
+    "mixed": 0.8,
+    "si": 0.8125,
+    "singlish": 0.98,
+    "ta": 0.825,
+    "tanglish": 0.75
+   },
+   "n_features": 43717,
+   "train_cv_accuracy": 0.9895
+  },
+  {
+   "id": "E6",
+   "name": "+ boilerplate-masked lexicon (FINAL)",
+   "val_accuracy": 0.8812,
+   "val_macro_f1": 0.8778,
+   "val_by_language": {
+    "en": 0.8786,
+    "mixed": 0.8,
+    "si": 0.85,
+    "singlish": 0.98,
+    "ta": 0.825,
+    "tanglish": 0.6
+   },
+   "n_features": 43754,
+   "train_cv_accuracy": 0.9885
+  }
+ ],
+ "dataset": {
+  "train": 4000,
+  "validation": 800,
+  "languages": {
+   "en": 1400,
+   "singlish": 1000,
+   "si": 800,
+   "ta": 600,
+   "mixed": 100,
+   "tanglish": 100
+  },
+  "channels": {
+   "chat": 1800,
+   "email": 1200,
+   "call_transcript": 1000
+  },
+  "categories": {
+   "payment_refund": 720,
+   "delivery_delay": 600,
+   "ride_trip_issue": 560,
+   "order_missing_wrong": 480,
+   "account_promo": 360,
+   "app_technical": 320,
+   "food_quality": 280,
+   "general_inquiry": 200,
+   "lost_item": 200,
+   "safety_conduct": 160,
+   "spam_irrelevant": 120
+  },
+  "urgent_share": 0.1,
+  "secondary_share": 0.1
+ },
+ "model_version": "datapulse-1.0.0"
+}

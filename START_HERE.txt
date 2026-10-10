@@ -1,0 +1,73 @@
+DATA PULSE - WHAT IS LEFT FOR YOU TO DO (deadline: 10 October 2026, 6:00 PM)
+================================================================================
+
+Everything is built. Four things need your own computer and accounts.
+Do them in this order. Replace PASTE_YOUR_KEY with the API key from the organisers.
+
+INSTALL FIRST (once)
+  Docker Desktop   https://www.docker.com/products/docker-desktop/
+  Git              https://git-scm.com/
+  Python 3.13      https://www.python.org/downloads/   (tick "Add python.exe to PATH")
+  Open Docker Desktop and wait until it says the engine is running.
+
+
+1. TEST ON YOUR COMPUTER  (about 10 minutes)
+   Easy way: double-click  run_local.bat  and paste the key when it asks.
+   It must end with:  ALL CHECKS PASSED
+
+   Same thing by hand, in PowerShell opened inside this folder:
+     docker build -t datapulse .
+     docker run -d --name datapulse-local -p 8000:8000 -e API_KEY=PASTE_YOUR_KEY datapulse
+     pip install jsonschema
+     python scripts/smoke_test.py http://localhost:8000 PASTE_YOUR_KEY
+   Demo site: http://localhost:8000
+   Stop it:   docker rm -f datapulse-local
+
+
+2. GITHUB  (about 5 minutes)
+   a. On github.com: New repository, name datapulse-tensorforge, do NOT add a README, Create.
+   b. Easy way: double-click  push_to_github.bat  and paste the repository address.
+
+   Same thing by hand:
+     git init
+     git config user.name "Your Name"
+     git config user.email "you@example.com"
+     git add .
+     git commit -m "Data Pulse MVP"
+     git branch -M main
+     git remote add origin https://github.com/YOUR_USERNAME/datapulse-tensorforge.git
+     git push -u origin main
+   c. On the repository page, search for  tf2_  . It must find nothing.
+
+
+3. HOSTING ON HUGGING FACE  (about 15 minutes)
+   a. huggingface.co -> profile picture -> New Space
+        Name: datapulse   SDK: Docker (Blank)   Hardware: CPU basic (free)   Visibility: Public
+   b. Space -> Settings -> Variables and secrets -> New SECRET
+        Name: API_KEY     Value: your key
+   c. Unzip HF_Space_upload.zip. Space -> Files -> upload files -> drag in EVERYTHING
+      that is inside the unzipped folder (Dockerfile, README.md, requirements.txt, app, models).
+      Commit to main.
+   d. Wait until the Space says Running (first build takes several minutes).
+   e. Three-dots menu -> Embed this Space -> copy the Direct URL.
+      It looks like:  https://YOUR_HF_USERNAME-datapulse.hf.space
+   f. Test the live service:
+        python scripts/smoke_test.py https://YOUR_HF_USERNAME-datapulse.hf.space PASTE_YOUR_KEY
+      It must end with:  ALL CHECKS PASSED
+   After this, do not upload anything else to the Space.
+
+
+4. VIDEO  (about 1.5 hours)
+   Read docs/VIDEO_NARRATION.md. It tells you what to show and gives words to say.
+   Record screen + voice with OBS Studio or Zoom (Share Screen + Record).
+   Never show the API key. Upload to YouTube as UNLISTED. Maximum 15 minutes.
+
+
+5. SUBMIT  (before 4:00 PM if you can)
+   Live demo link + API base URL : the Direct URL from step 3
+   GitHub repository             : the link from step 2
+   Video                         : the YouTube Unlisted link
+   Report                        : docs/DataPulse_Report.pdf  (4 pages, ready)
+
+
+IF ANYTHING FAILS: copy the full error text and send it to Claude with the step number.

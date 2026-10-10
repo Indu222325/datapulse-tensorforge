@@ -1,0 +1,10 @@
+# secrets: the API key lives here locally and must never be committed
+.env
+# local runtime state (job database)
+runtime/
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.DS_Store

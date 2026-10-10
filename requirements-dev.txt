@@ -1,0 +1,6 @@
+# Training + tests (not installed in the Docker image)
+-r requirements.txt
+pandas==3.0.5
+pytest
+httpx
+jsonschema

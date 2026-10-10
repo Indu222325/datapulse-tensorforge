@@ -1,0 +1,29 @@
+{
+ "model_version": "datapulse-1.0.0",
+ "sha256_model_joblib": "31d92d0cb72935cde7fc9105db8e9217924f886d354a115882f34e0d258b175e",
+ "trained_at_utc": "2026-10-09T14:42:11Z",
+ "algorithm": "Linear SVM (one-vs-rest) x3 heads on TF-IDF word + char n-grams, romanised char n-grams and a domain concept lexicon",
+ "trained_on": "train.jsonl + validation.jsonl + 30 hand-written spam examples (4830 tickets)",
+ "hyperparameters": {
+  "C": 0.5,
+  "lexicon_weight": 0.5,
+  "temperature": 0.1714,
+  "urgent_threshold": 0.0,
+  "secondary_margin": -0.5,
+  "review_threshold": 0.6
+ },
+ "n_features": 49527,
+ "n_filler_trigrams": 3138,
+ "libraries": {
+  "python": "3.13.16",
+  "scikit-learn": "1.9.1",
+  "numpy": "2.5.3"
+ },
+ "validation_metrics_train_only_fit": {
+  "accuracy": 0.88,
+  "macro_f1": 0.8757,
+  "urgency_f1": 0.9241,
+  "secondary_f1": 0.8816,
+  "ece": 0.034
+ }
+}

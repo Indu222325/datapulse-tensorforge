@@ -1,0 +1,9 @@
+# Runtime dependencies. Versions are pinned to the ones the model artifact was trained with:
+# scikit-learn pickles are only guaranteed to load on the same scikit-learn version.
+fastapi==0.143.0
+starlette==1.6.0
+uvicorn==0.53.0
+scikit-learn==1.9.1
+numpy==2.5.3
+scipy==1.18.1
+joblib==1.6.0

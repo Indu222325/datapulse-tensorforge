@@ -1,0 +1,19 @@
+train 4000 tickets, validation 800 tickets
+
+[1/3] experiment ladder (fit on train, score on validation)
+  E1 Baseline: word TF-IDF + Logistic Regression                              val acc 0.6038  macro-F1 0.6338  train-CV 0.9770  [5s]
+  E2 Word TF-IDF + linear SVM                                                 val acc 0.6400  macro-F1 0.6646  train-CV 0.9808  [3s]
+  E3 + character n-grams (typo / spelling robust)                             val acc 0.6600  macro-F1 0.6862  train-CV 0.9872  [13s]
+  E4 + romanised character n-grams (Sinhala<->Singlish, Tamil<->Tanglish)     val acc 0.6800  macro-F1 0.7032  train-CV 0.9890  [30s]
+  E5 + domain concept lexicon                                                 val acc 0.8550  macro-F1 0.8526  train-CV 0.9895  [35s]
+  E6 + boilerplate-masked lexicon (FINAL)                                     val acc 0.8812  macro-F1 0.8778  train-CV 0.9885  [44s]
+
+[2/3] tuning heads on validation
+  category   acc 0.8800  macro-F1 0.8757  noisy-val acc 0.7750
+  urgency    P 0.936  R 0.912  F1 0.924  (threshold 0.0)
+  secondary  exact-match 0.9812  P 0.931  R 0.838  F1 0.882  (margin -0.5)
+  calibration T=0.1714  ECE 0.5938 -> 0.034   review threshold 0.6
+
+[3/3] final model: refit on train + validation
+  saved models/datapulse-1.0.0/model.joblib (4.2 MB, sha256 31d92d0cb729...)
+done.
